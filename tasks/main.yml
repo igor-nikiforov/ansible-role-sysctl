@@ -1,5 +1,5 @@
 ---
-- name: Apply sysctl settings
+- name: Apply sysctl settings.
   sysctl:
     name: "{{ item.key }}"
     value: "{{ item.value }}"
