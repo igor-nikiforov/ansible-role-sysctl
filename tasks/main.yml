@@ -1,10 +1,13 @@
 ---
 - name: Apply sysctl settings.
   sysctl:
-    name: "{{ item.key }}"
+    name: "{{ item.name }}"
     value: "{{ item.value }}"
-    sysctl_set: yes
+    sysctl_set: "{{ sysctl_set }}"
     state: present
-    reload: yes
-    ignoreerrors: yes
-  with_dict: "{{ sysctl }}"
+    reload: "{{ sysctl_reload }}"
+  loop: "{{ sysctl_settings }}"
+  when:
+    - sysctl_settings is defined
+    - item.name is defined
+    - item.value is defined

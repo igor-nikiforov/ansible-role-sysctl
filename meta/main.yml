@@ -1,29 +1,27 @@
 ---
 galaxy_info:
+  role_name: sysctl
   author: Igor Nikiforov
-  description: Set sysctl settings for Linux
+  description: Configure sysctl paramaters under any Linux distributions.
   license: MIT
   company: none
-  min_ansible_version: 2.8
+  min_ansible_version: 2.9
   platforms:
     - name: Ubuntu
       versions:
-        - xenial
-        - bionic
+        - all
     - name: Debian
       versions:
-        - stretch
-        - buster
+        - all
     - name: EL
       versions:
         - 7
-        - 8
     - name: Fedora
       versions:
-        - 30
-        - 31
+        - all
   galaxy_tags:
-    - sysctl
     - system
+    - sysctl
+    - security
 
 dependencies: []
