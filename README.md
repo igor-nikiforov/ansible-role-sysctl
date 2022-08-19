@@ -45,7 +45,8 @@ Role supports all sysctl configuration parameters. Please use ```sysctl -a``` to
 
   vars:
     sysctl_settings:
-      net.ipv4.ip_forward: 1
+      - name: net.ipv4.ip_forward
+        value: 1
 
   tasks:
     - name: Configure sysctl parameters
