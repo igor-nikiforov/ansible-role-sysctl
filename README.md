@@ -4,13 +4,13 @@ This role configures sysctl (kernel) parameters on your Linux distribution.
 
 ## Requirements
 
-This role developed and tested with following Ansible versions:
+This role was developed and tested with the following Ansible versions:
 
 | Name                                                   | Version         |
 |--------------------------------------------------------|-----------------|
 | [ansible](https://pypi.org/project/ansible/)           | ```>= 2.9.9```  |
 
-Other Ansible versions was not tested but will probably work.
+Other Ansible versions were not tested, but will probably work.
 
 ## Installation
 
@@ -45,7 +45,8 @@ Role supports all sysctl configuration parameters. Please use ```sysctl -a``` to
 
   vars:
     sysctl_settings:
-      net.ipv4.ip_forward: 1
+      - name: net.ipv4.ip_forward
+        value: 1
 
   tasks:
     - name: Configure sysctl parameters
